@@ -4,7 +4,9 @@ from transformers import AutoTokenizer
 
 
 def main():
+    # 规定模型路径
     path = os.path.expanduser("~/huggingface/Qwen3-0.6B/")
+    # 加载分词器和模型
     tokenizer = AutoTokenizer.from_pretrained(path)
     llm = LLM(path, enforce_eager=True, tensor_parallel_size=1)
 
